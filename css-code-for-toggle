@@ -1,1 +1,54 @@
+We’ll create a read more button with Elementor or a show more button with Elementor toggle widget using simple CSS. It will also have an option for Read Less after clicking the read more button, so, it’ll allow the users to wrap the text again.
 
+To create read more button with Elementor we’ll divide this procedure into 3 simple steps:
+
+1) Add Toggle widget and class
+Add toggle widget on your page. Give it a title of Read More or any name that you would like to give to your button. Now the most important thing is to add class of readmorebtn by going to Advanced > CSS Classes tab.
+
+2) Customize Toggle widget
+Remove toggle icon option in Content tab, remove or add 0px border in style tab, and remove padding (add 0px) by going to style > content > padding.
+
+3) Add Custom CSS
+Now go to page settings by clicking the gear icon in the extreme bottom left of the screen and click the advanced tab and add the following CSS in Custom CSS section. Gear Icon > Advanced > Custom CSS.
+
+
+.readmorebtn .elementor-tab-title a {
+    display: block;
+    text-align-last: center;
+    font-weight: 400;
+    text-align: center;
+    transition: all 0.25s ease;
+    color: #fff !important;
+    background-color: #000;
+    font-size: 13px !important;
+    padding: 10px 15px;
+    border-radius: 44px;
+}
+.readmorebtn .elementor-tab-title a:hover {
+    color: #000 !important;
+    background-color: #fff; 
+    border: 1px solid #000;
+} 
+.readmorebtn .elementor-tab-title.elementor-active::before {
+    content: 'Read Less';
+    font-size: 13px;
+    font-weight: 400;
+    display: block;
+    text-align-last: center;
+    }
+.readmorebtn .elementor-toggle-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.readmorebtn .elementor-tab-title.elementor-active a{
+    display:none;
+} 
+.readmorebtn .elementor-toggle .elementor-tab-title {
+    display: flex;
+    justify-content: center;
+}
+.elementor-tab-content {
+    text-align: -webkit-center;
+}
